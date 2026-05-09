@@ -1,0 +1,602 @@
+[
+  {
+    "ticker": "FIN1",
+    "name": "Financials stock1",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN2",
+    "name": "Financials stock2",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN3",
+    "name": "Financials stock3",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN4",
+    "name": "Financials stock4",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN5",
+    "name": "Financials stock5",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN6",
+    "name": "Financials stock6",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN7",
+    "name": "Financials stock7",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN8",
+    "name": "Financials stock8",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN9",
+    "name": "Financials stock9",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN10",
+    "name": "Financials stock10",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN11",
+    "name": "Financials stock11",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN12",
+    "name": "Financials stock12",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN13",
+    "name": "Financials stock13",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN14",
+    "name": "Financials stock14",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN15",
+    "name": "Financials stock15",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN16",
+    "name": "Financials stock16",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN17",
+    "name": "Financials stock17",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN18",
+    "name": "Financials stock18",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN19",
+    "name": "Financials stock19",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN20",
+    "name": "Financials stock20",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN21",
+    "name": "Financials stock21",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN22",
+    "name": "Financials stock22",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN23",
+    "name": "Financials stock23",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN24",
+    "name": "Financials stock24",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "FIN25",
+    "name": "Financials stock25",
+    "sector": "Financials",
+    "liquid": true
+  },
+  {
+    "ticker": "ENE1",
+    "name": "Energy stock1",
+    "sector": "Energy",
+    "liquid": true
+  },
+  {
+    "ticker": "ENE2",
+    "name": "Energy stock2",
+    "sector": "Energy",
+    "liquid": true
+  },
+  {
+    "ticker": "ENE3",
+    "name": "Energy stock3",
+    "sector": "Energy",
+    "liquid": true
+  },
+  {
+    "ticker": "ENE4",
+    "name": "Energy stock4",
+    "sector": "Energy",
+    "liquid": true
+  },
+  {
+    "ticker": "ENE5",
+    "name": "Energy stock5",
+    "sector": "Energy",
+    "liquid": true
+  },
+  {
+    "ticker": "ENE6",
+    "name": "Energy stock6",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE7",
+    "name": "Energy stock7",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE8",
+    "name": "Energy stock8",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE9",
+    "name": "Energy stock9",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE10",
+    "name": "Energy stock10",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE11",
+    "name": "Energy stock11",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE12",
+    "name": "Energy stock12",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE13",
+    "name": "Energy stock13",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE14",
+    "name": "Energy stock14",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE15",
+    "name": "Energy stock15",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE16",
+    "name": "Energy stock16",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE17",
+    "name": "Energy stock17",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE18",
+    "name": "Energy stock18",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE19",
+    "name": "Energy stock19",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "ENE20",
+    "name": "Energy stock20",
+    "sector": "Energy",
+    "liquid": false
+  },
+  {
+    "ticker": "CON1",
+    "name": "Consumer stock1",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON2",
+    "name": "Consumer stock2",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON3",
+    "name": "Consumer stock3",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON4",
+    "name": "Consumer stock4",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON5",
+    "name": "Consumer stock5",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON6",
+    "name": "Consumer stock6",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON7",
+    "name": "Consumer stock7",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON8",
+    "name": "Consumer stock8",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON9",
+    "name": "Consumer stock9",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON10",
+    "name": "Consumer stock10",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON11",
+    "name": "Consumer stock11",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON12",
+    "name": "Consumer stock12",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON13",
+    "name": "Consumer stock13",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON14",
+    "name": "Consumer stock14",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON15",
+    "name": "Consumer stock15",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON16",
+    "name": "Consumer stock16",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON17",
+    "name": "Consumer stock17",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON18",
+    "name": "Consumer stock18",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON19",
+    "name": "Consumer stock19",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "CON20",
+    "name": "Consumer stock20",
+    "sector": "Consumer",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA1",
+    "name": "Healthcare stock1",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA2",
+    "name": "Healthcare stock2",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA3",
+    "name": "Healthcare stock3",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA4",
+    "name": "Healthcare stock4",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA5",
+    "name": "Healthcare stock5",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA6",
+    "name": "Healthcare stock6",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA7",
+    "name": "Healthcare stock7",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA8",
+    "name": "Healthcare stock8",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA9",
+    "name": "Healthcare stock9",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA10",
+    "name": "Healthcare stock10",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA11",
+    "name": "Healthcare stock11",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA12",
+    "name": "Healthcare stock12",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA13",
+    "name": "Healthcare stock13",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA14",
+    "name": "Healthcare stock14",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA15",
+    "name": "Healthcare stock15",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA16",
+    "name": "Healthcare stock16",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA17",
+    "name": "Healthcare stock17",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA18",
+    "name": "Healthcare stock18",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA19",
+    "name": "Healthcare stock19",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "HECA20",
+    "name": "Healthcare stock20",
+    "sector": "Healthcare",
+    "liquid": false
+  },
+  {
+    "ticker": "IND1",
+    "name": "Industrials stock1",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND2",
+    "name": "Industrials stock2",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND3",
+    "name": "Industrials stock3",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND4",
+    "name": "Industrials stock4",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND5",
+    "name": "Industrials stock5",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND6",
+    "name": "Industrials stock6",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND7",
+    "name": "Industrials stock7",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND8",
+    "name": "Industrials stock8",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND9",
+    "name": "Industrials stock9",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND10",
+    "name": "Industrials stock10",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND11",
+    "name": "Industrials stock11",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND12",
+    "name": "Industrials stock12",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND13",
+    "name": "Industrials stock13",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND14",
+    "name": "Industrials stock14",
+    "sector": "Industrials",
+    "liquid": false
+  },
+  {
+    "ticker": "IND15",
+    "name": "Industrials stock15",
+    "sector": "Industrials",
+    "liquid": false
+  }
+]
