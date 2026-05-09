@@ -42,21 +42,21 @@
   ```
   ftse100_portfolio_rebalancer/
   |-- src/
-  |    |-- data.py # Loads FTSE stock metadata generates correlated returns matrix and analyses multicollinearity.
+  |    |-- data.py 
   |    |   |- load_ftse_stocks(filepath)                  -> stocks, a list of stocks with ticker, sector, liquidity    
   |    |   |- generate_correlated_returns(stocks, n_days) -> returns x matrix (252 x 100) where each cell is a daily return value    
   |    |   |_ analyse_multicollinearity(x)                -> k value and highly correlated pairs    
-  |    |-- ridge.py — Ridge regression, calculate condition number, cross-validate lambda and compare conditioning 
+  |    |-- ridge.py  
   |    |   |- ridge_regression(x, y, lambda)              -> portfolio weights w
   |    |   |- compute_condition_number(x, lambda)         -> k value
   |    |   |- cross_validate_lambda(x, y)                 -> lambda
   |    |   |_ compare_conditioning(x, lambda)             -> k before, k after, improvement factor
-  |    |-- constraints.py  — FCA compliance and constraints checker
+  |    |-- constraints.py  
   |    |   |- project_weights(w, constraints)             -> FCA compliant weights
   |    |   |_ check_fca_compliance(w, constraints)        -> bool (True = compliant, False = violation)
-  |    |-- rebalance.py — Trade list generation 
+  |    |-- rebalance.py 
   |    |   |_ generate_trade_list(current_weights, target_weights) -> trade list
-  |    |-- analysis.py — Reporting - sector allocation, compute_portfolio_volatility - report the risk after rebalancing
+  |    |-- analysis.py
   |        |- compute_sector_allocation(w, stocks)        -> sector weight dict
   |        |_ compute_portfolio_volatility(x, w)          -> volatility score
   |-- data/
@@ -68,7 +68,7 @@
   |    |__ test_integration.py
   |-- results/
   |-- main.py - Orchestrates the full pipeline: load -> ridge -> FCA compliance -> validate -> output trade list
-  |-- verify_multicollinearity.py - standalone diagnostic script. run once before implementation to confirm k(X^T @ x) > 10^6 and ridge is required.
+  |-- verify_multicollinearity.py                    -> standalone diagnostic script. run once before implementation to confirm k(X^T @ x) > 10^6 and ridge is required.
   |-- DESIGN.md
   |-- README.md
   |-- .gitignore
