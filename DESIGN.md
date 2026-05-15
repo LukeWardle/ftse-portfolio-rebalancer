@@ -51,9 +51,15 @@
   |    |   |- compute_condition_number(x, lambda)         -> k value
   |    |   |- cross_validate_lambda(x, y)                 -> lambda
   |    |   |_ compare_conditioning(x, lambda)             -> k before, k after, improvement factor
-  |    |-- constraints.py  
-  |    |   |- project_weights(w, constraints)             -> FCA compliant weights
-  |    |   |_ check_fca_compliance(w, constraints)        -> bool (True = compliant, False = violation)
+  |    |-- constraints.py 
+  |    |   |- normalise_weights(w)                        -> normalised weights summing to 1.0
+  |    |   |- project_weights(w, stocks,
+  |    |   |                  max_stock=0.10, 
+  |    |   |                  max_sector=0.30,
+  |    |   |                  min_liquid=0.05,
+  |    |   |                  max_iter=100,
+  |    |   |                  tol=1e-6)                   -> FCA compliant weights as np.ndarray
+  |    |   |_ check_fca_compliance(w, stocks, tol=1e-4)   -> dict {compliant: bool, violations: list}
   |    |-- rebalance.py 
   |    |   |_ generate_trade_list(current_weights, target_weights) -> trade list
   |    |-- analysis.py
