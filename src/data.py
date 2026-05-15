@@ -33,7 +33,7 @@ def generate_correlated_returns(stocks: List[Dict],
   n = len(stocks)
   unique_sectors = list(dict.fromkeys(s["sector"] for s in stocks))
   sector_factors = {sec: rng.standard_normal(n_days) * 0.015
-                    for sec in unique_sectors}
+  for sec in unique_sectors}
   X = np.zeros((n_days, n))
   for j, stock in enumerate(stocks):
     sector_noise = sector_factors[stock["sector"]]
