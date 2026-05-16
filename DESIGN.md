@@ -61,7 +61,13 @@
   |    |   |                  tol=1e-6)                   -> FCA compliant weights as np.ndarray
   |    |   |_ check_fca_compliance(w, stocks, tol=1e-4)   -> dict {compliant: bool, violations: list}
   |    |-- rebalance.py 
-  |    |   |_ generate_trade_list(current_weights, target_weights) -> trade list
+  |    |   |- generate_trade_list(current_weights,        -> list of trade dicts {ticker, action, amount_gbp, weight_change}
+  |    |   |                      target_weights,
+  |    |   |                      stocks,
+  |    |   |                      portfolio_value=50_000_000) 
+  |    |   |_ estimate_transaction_costs(trades,          -> dict {n_trades, fixed_costs, commission, stamp_duty, total_cost, cost_pct}
+  |    |                                 fixed_cost=25.0,
+  |    |                                 commission_rate=0.001)
   |    |-- analysis.py
   |        |- compute_sector_allocation(w, stocks)        -> sector weight dict
   |        |_ compute_portfolio_volatility(x, w)          -> volatility score
