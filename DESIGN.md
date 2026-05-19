@@ -43,43 +43,50 @@
   ftse100_portfolio_rebalancer/
   |-- src/
   |    |-- data.py 
-  |    |   |- load_ftse_stocks(filepath)                  -> stocks, a list of stocks with ticker, sector, liquidity    
-  |    |   |- generate_correlated_returns(stocks, n_days) -> returns x matrix (252 x 100) where each cell is a daily return value    
-  |    |   |_ analyse_multicollinearity(x)                -> k value and highly correlated pairs    
+  |    |         |- load_ftse_stocks(filepath)                                -> stocks, a list of stocks with ticker, sector, liquidity    
+  |    |         |- generate_correlated_returns(stocks, n_days)               -> returns x matrix (252 x 100) where each cell is a daily return value    
+  |    |         |_ analyse_multicollinearity(x)                              -> k value and highly correlated pairs    
+  |    |
   |    |-- ridge.py  
-  |    |   |- ridge_regression(x, y, lambda)              -> portfolio weights w
-  |    |   |- compute_condition_number(x, lambda)         -> k value
-  |    |   |- cross_validate_lambda(x, y)                 -> lambda
-  |    |   |_ compare_conditioning(x, lambda)             -> k before, k after, improvement factor
+  |    |         |- ridge_regression(x, y, lambda)                            -> portfolio weights w
+  |    |         |- compute_condition_number(x, lambda)                       -> k value
+  |    |         |- cross_validate_lambda(x, y)                               -> lambda
+  |    |         |_ compare_conditioning(x, lambda)                           -> k before, k after, improvement factor
+  |    |
   |    |-- constraints.py 
-  |    |   |- normalise_weights(w)                        -> normalised weights summing to 1.0
-  |    |   |- project_weights(w, stocks,
-  |    |   |                  max_stock=0.10, 
-  |    |   |                  max_sector=0.30,
-  |    |   |                  min_liquid=0.05,
-  |    |   |                  max_iter=100,
-  |    |   |                  tol=1e-6)                   -> FCA compliant weights as np.ndarray
-  |    |   |_ check_fca_compliance(w, stocks, tol=1e-4)   -> dict {compliant: bool, violations: list}
+  |    |         |- normalise_weights(w)                                      -> normalised weights summing to 1.0
+  |    |         |- project_weights(w, stocks,
+  |    |         |                  max_stock=0.10, 
+  |    |         |                  max_sector=0.30,
+  |    |         |                  min_liquid=0.05,
+  |    |         |                  max_iter=100,
+  |    |         |                  tol=1e-6)                                 -> FCA compliant weights as np.ndarray
+  |    |         |_ check_fca_compliance(w, stocks, tol=1e-4)                 -> dict {compliant: bool, violations: list}
+  |    |
   |    |-- rebalance.py 
-  |    |   |- generate_trade_list(current_weights,        -> list of trade dicts {ticker, action, amount_gbp, weight_change}
-  |    |   |                      target_weights,
-  |    |   |                      stocks,
-  |    |   |                      portfolio_value=50_000_000) 
-  |    |   |_ estimate_transaction_costs(trades,          -> dict {n_trades, fixed_costs, commission, stamp_duty, total_cost, cost_pct}
-  |    |                                 fixed_cost=25.0,
-  |    |                                 commission_rate=0.001)
+  |    |         |- generate_trade_list(current_weights,                      -> list of trade dicts {ticker, action, amount_gbp, weight_change}
+  |    |         |                      target_weights,
+  |    |         |                      stocks,
+  |    |         |                      portfolio_value=50_000_000) 
+  |    |         |_ estimate_transaction_costs(trades,                        -> dict {n_trades, fixed_costs, commission, stamp_duty, total_cost, cost_pct}
+  |    |                                       fixed_cost=25.0,
+  |    |                                       commission_rate=0.001)
   |    |-- analysis.py
-  |        |- compute_sector_allocation(w, stocks)        -> sector weight dict
-  |        |_ compute_portfolio_volatility(x, w)          -> volatility score
+  |              |- sector_allocation(w, stocks)                              -> sector weight dict
+  |              |- compute_portfolio_volatility(w, returns)                  -> volatility score
+  |              |_ compare_portfolios(current_w,                             -> dict {current_vol, optimised_vol, current_sector, optimised_sector}
+  |                                    optimised_w,
+  |                                    returns, 
+  |                                    stocks)
   |-- data/
   |-- tests/
-  |    |-- test_data.py
-  |    |-- test_ridge.py
-  |    |-- test_constraints.py
-  |    |-- test_rebalance.py
-  |    |__ test_integration.py
+  |       |-- test_data.py
+  |       |-- test_ridge.py
+  |       |-- test_constraints.py
+  |       |-- test_rebalance.py
+  |       |__ test_integration.py
   |-- results/
-  |-- main.py - Orchestrates the full pipeline: load -> ridge -> FCA compliance -> validate -> output trade list
+  |-- main.py - Orchestrates the full pipeline: load -> optimise -> constrain -> rebalance -> analyse
   |-- verify_multicollinearity.py                    -> standalone diagnostic script. run once before implementation to confirm k(X^T @ x) > 10^6 and ridge is required.
   |-- DESIGN.md
   |-- README.md
