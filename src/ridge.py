@@ -25,7 +25,7 @@ def ridge_regression(X: np.ndarray,
   n_stocks = X.shape[1]
   XtX = X.T @ X
   Xty = X.T @ y
-  ridge_matrix = XtX + lambda_ + np.eye(n_stocks)
+  ridge_matrix = XtX + lambda_ * np.eye(n_stocks)
   w = np.linalg.solve(ridge_matrix, Xty)
   return w
 
