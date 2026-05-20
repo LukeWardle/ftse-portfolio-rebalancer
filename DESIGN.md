@@ -128,3 +128,32 @@
   - Portfolio weights are numerically stable
   - Report showing that condition number decreases with X'X + lambda*I
   - Trade list output showing current weight, target weight and trade direction per stock
+
+  ## 6. Version 2 Roadmap
+
+### Data Layer
+- Replace `generate_correlated_returns()` in `src/data.py` with yfinance loader
+- Fetch real FTSE 100 daily returns via `yfinance.download()`
+- Expected condition number k(X'X) >> 10,000 with real data vs 2,862 synthetic
+- Volatility comparison will become meaningful with real returns
+
+### Solver Upgrade
+- Replace iterative projection in `src/constraints.py` with constrained QP
+- Use `scipy.optimize.minimize` with SLSQP or `cvxpy`
+- FCA constraints become hard constraints — provably correct rather than approximated
+- Convergence warning in current `project_weights()` will be eliminated
+
+### Lambda Grid
+- Expand cross-validation grid in `main.py` from [0.1, 1.0, 10.0]
+- Use `np.logspace(-2, 3, 20)` for proper search across 20 values
+- Affects `cross_validate_lambda()` in `src/ridge.py`
+
+### y Target
+- Replace cross-sectional mean `y = np.mean(returns, axis=1)` in `main.py`
+- Use benchmark index return or forward-looking return estimate
+- Document the chosen target and its financial justification
+
+### Test Upgrades
+- Add integration test with real data fixture
+- Add QP solver correctness test against known analytical solution
+- Expand lambda grid test to cover logspace range
