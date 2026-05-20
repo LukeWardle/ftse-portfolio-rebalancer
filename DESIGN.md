@@ -30,8 +30,8 @@
   ## 2. Problem Formulation 
   Type: Ridge regression with constraints 
   Objective: Minimise prediction error + penalise large weights
-  Formula: Minimise ||Xw - y||^2 + lambda||w||^2 - (Ridge loss: fit to data + regularisation penalty)
-  Solution: w = (X^T @ X + lambda * I)^-1 @ X^T @ y
+  Formula: Minimise ||Xw - y||^2 + lambda * ||w||^2 - (Ridge loss: fit to data + regularisation penalty)
+  Solution: w = (X'X + lambda*I)^-1 X'y
   Constraints: 
   - Stock limit: 10%
   - Sector limit: 30%
@@ -88,10 +88,11 @@
   |
   |-- results/                                                                -> stores CSV files created from export_results.py, stores png files created by 
   |                                                                              visualise_portfolio.py
+  |-- images/                                                                 -> chart outputs for README display
   |-- main.py                                                                 -> orchestrates the full pipeline: load -> optimise -> constrain -> rebalance -> analyse
   |                                                                              -> export -> visualise
-  |-- verify_multicollinearity.py                                             -> standalone diagnostic script. run once before implementation to confirm k(X^T @ x) > 10^6 and
-  |                                                                              ridge is required.
+  |-- verify_multicollinearity.py                                             -> standalone diagnostic script. run once to confirm k(X'X) > 100 and ridge is required.
+  |                                                                             
   |-- export_results.py 
   |              |- export_trades(trades, costs, output_dir)                  -> writes trades.csv
   |              |- export_compliance(compliance, output_dir)                 -> writes compliance.csv
@@ -116,8 +117,8 @@
   ```
 
   ## 4. Risks 
-  - X^t @ x is still ill-conditioned after ridge regression - increase lambda
-  - Constraint projection doesn't converge — cap iterations at 100, check weight change < 1e-8 between iterations
+  - X'X is still ill-conditioned after ridge regression - increase lambda
+  - Constraint projection doesn't converge — cap iterations at 100, check weight change < 1e-6 between iterations
   - FCA constraint violation - check compliance after every optimisation, do not return portfolio without passing all
   - Overfitting to history - use lambda regularisation and out of sample test
  
@@ -125,5 +126,5 @@
   - All FCA constraints are satisfied
   - Weights sum to 1.0 and are non-negative
   - Portfolio weights are numerically stable
-  - Report showing that condition number decreases with X^t @ X + lambda * I
+  - Report showing that condition number decreases with X'X + lambda*I
   - Trade list output showing current weight, target weight and trade direction per stock
