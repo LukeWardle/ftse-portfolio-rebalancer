@@ -86,8 +86,10 @@
   |       |-- test_rebalance.py
   |       |__ test_integration.py
   |
-  |-- results/                                                                -> stores CSV files created from export_results.py
+  |-- results/                                                                -> stores CSV files created from export_results.py, stores png files created by 
+  |                                                                              visualise_portfolio.py
   |-- main.py                                                                 -> orchestrates the full pipeline: load -> optimise -> constrain -> rebalance -> analyse
+  |                                                                              -> export -> visualise
   |-- verify_multicollinearity.py                                             -> standalone diagnostic script. run once before implementation to confirm k(X^T @ x) > 10^6 and
   |                                                                              ridge is required.
   |-- export_results.py 
@@ -101,7 +103,11 @@
   |                            comparison,
   |                            output_dir)
   |                                                      
-  |-- visualise_portfolio.py                                                  -> sector allocation chart
+  |-- visualise_portfolio.py                                                  
+  |              |- plot_sector_comparison(comparison, output_dir)            -> saves sector_comparison.png
+  |              |- plot_sector_pie(comparison, output_dir)                   -> saves sector_pie.png
+  |              |_ visualise_portfolio(comparison, output_dir)               -> creates results/ and save both charts
+  |
   |-- DESIGN.md
   |-- README.md
   |-- .gitignore

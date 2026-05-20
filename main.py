@@ -10,6 +10,7 @@ from src.constraints import project_weights, check_fca_compliance
 from src.rebalance import generate_trade_list, estimate_transaction_costs
 from src.analysis import compare_portfolios
 from export_results import export_all
+from visualise_portfolio import visualise_portfolio
 
 def main() -> int:
   print("=" * 60)
@@ -47,6 +48,9 @@ def main() -> int:
 
   # Step 6 - Export results
   export_all(trades, costs, compliance, comparison)
+
+  # Step 7 - Create visual charts
+  visualise_portfolio(comparison)
 
   return 0
 
