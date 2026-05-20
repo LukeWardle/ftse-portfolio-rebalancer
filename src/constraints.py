@@ -10,6 +10,7 @@ Projects unconstrained Ridge weights onto the FCA feasible set:
 
 """
 import numpy as np
+import warnings
 from typing import List, Dict
 
 def normalise_weights(w: np.ndarray) -> np.ndarray:
@@ -75,6 +76,11 @@ def project_weights(w: np.ndarray,
     # Convergence check
     if np.linalg.norm(w_proj - w_old) < tol:
       break
+    else:
+      warnings.warn(
+        f"project_weights did not converge in {max_iter} iterations — "
+        "returned weights may not satisfy all FCA constraints."
+      )
 
   return w_proj
 

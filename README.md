@@ -3,7 +3,7 @@ Ridge-regularised FTSE 100 portfolio rebalancing with FCA compliance
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Tests](https://img.shields.io/badge/tests-19%20passing-brightgreen)
+![Tests](https://img.shields.io/badge/tests-21%20passing-brightgreen)
 ![FCA](https://img.shields.io/badge/FCA-compliant-blue)
 
 ## Results
@@ -12,9 +12,9 @@ Ridge-regularised FTSE 100 portfolio rebalancing with FCA compliance
 |--------|-------|
 | Condition number improvement | k reduced from 2,862 to 62.7 (46x) |
 | FCA compliance | PASS — 0 violations |
-| Trades generated | 100 |
-| Transaction cost | GBP99,814 (0.25%) |
-| Tests passing | 19 |
+| Trades generated | 81 |
+| Transaction cost | GBP 7,143 (0.01%) |
+| Tests passing | 21 |
 
 ## Portfolio Visualisation
 
@@ -22,10 +22,9 @@ The charts illustrate sector allocation before and after optimisation. The initi
 portfolio shows a relatively balanced distribution, while the optimised portfolio 
 reallocates weights to maximise exposure within regulatory constraints.
 
-Post-optimisation, Financials, Consumer and Healthcare are pushed to the 30% FCA 
-limit, while Energy and Industrials are significantly reduced. This demonstrates how 
-the model concentrates capital into stronger signals while enforcing diversification 
-constraints.
+Post-optimisation, the portfolio maintains balance with slight alterations to sector 
+allocations. Financials and Consumer see a slight increase while Energy and Industrials 
+show a slight decrease — all sectors remain well within the FCA 30% limit.
 
 ![Sector Comparison](images/sector_comparison.png)
 ![Sector Pie](images/sector_pie.png)
@@ -65,7 +64,7 @@ pip install -r requirements.txt
 ## Usage
 ```
 python main.py        # runs full pipeline, prints FCA compliance and volatility
-pytest tests/ -v      # runs 19 tests
+pytest tests/ -v      # runs 21 tests
 ```
 
 ## Project Structure
@@ -100,6 +99,7 @@ See DESIGN.md for full architecture and function signatures.
 - Upgrade solver to constrained QP (scipy SLSQP) for v2
 - ILP upgrade for integer trade sizing
 - Volatility comparison meaningful only with real returns data — synthetic data limitation
+- y target is cross-sectional mean return — not a true optimisation target; upgrade with yfinance
 
 ## Licence
 

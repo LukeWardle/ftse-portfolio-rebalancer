@@ -62,3 +62,20 @@ def test_fca_compliance_checker_passes_valid():
   w = project_weights(np.random.randn(40), stocks)
   result = check_fca_compliance(w, stocks)
   assert result["compliant"], f"Violations: {result['violations']}"
+
+def test_liquidity_minimum_enforced():
+  """
+  FCA: liquid stocks must receive at least 5% total weight after projection.
+  
+  """
+  stocks = make_stocks(40)  # 5 liquid stocks (i < 5)
+
+  # Force all weight onto illiquid stocks
+  w_raw = np.zeros(40)
+  w_raw[10:] = 1.0  # all illiquid
+  w = project_weights(w_raw, stocks)
+  liquid_idx = [i for i, s in enumerate(stocks) if s["liquid"]]
+  assert w[liquid_idx].sum() >= 0.05 - 1e-4
+
+  # Also verify stock cap not violated
+  assert (w <= 0.10 + 1e-4).all()

@@ -44,10 +44,22 @@ def test_lambda_zero_matches_ols():
   Ridge with lambda=0 must produce identical weights to OLS — proves implementation is correct.
 
   """
-  X = np.random.randn(100, 10); y = np.random.randn(100)
+  X = np.random.randn(100, 10) 
+  y = np.random.randn(100)
   w_ridge = ridge_regression(X, y, lambda_=0.0)
   w_ols = np.linalg.lstsq(X, y, rcond=None)[0]
-  np.testing.assert_allclose(w_ridge, w_ols, rtol=1e-1)  # solve() uses normal equations, lstsq uses SVD — different numerical paths - v2 Yfinance may need changing
+  np.testing.assert_allclose(w_ridge, w_ols, rtol=1e-5)  # ridge with lambda=0 should equal OLS exactly — rtol=1e-5 tight enough to catch implementation errors
+
+def test_ridge_known_solution():
+  """
+  Ridge on identity matrix has analytical solution: w = 0.5 * y when lambda=1.
+  
+  """
+  X = np.eye(3)
+  y = np.array([1.0, 2.0, 3.0])
+  w = ridge_regression(X, y, lambda_=1.0)
+  expected = np.array([0.5, 1.0, 1.5])
+  np.testing.assert_allclose(w, expected, rtol=1e-5)
 
 def test_large_lambda_shrinks_norm():
   """
