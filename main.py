@@ -9,6 +9,7 @@ from src.ridge import ridge_regression, cross_validate_lambda
 from src.constraints import project_weights, check_fca_compliance
 from src.rebalance import generate_trade_list, estimate_transaction_costs
 from src.analysis import compare_portfolios
+from export_results import export_all
 
 def main() -> int:
   print("=" * 60)
@@ -43,6 +44,9 @@ def main() -> int:
   comparison = compare_portfolios(current, w_final, returns, stocks)
   print(f"Trades: {costs['n_trades']} | Cost:   GBP{costs['total_cost']:,.0f}")
   print(f"Vol: {comparison['current_vol']:.1%} -> {comparison['optimised_vol']:.1%}")
+
+  # Step 6 - Export results
+  export_all(trades, costs, compliance, comparison)
 
   return 0
 

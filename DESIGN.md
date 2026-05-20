@@ -71,7 +71,7 @@
   |    |         |_ estimate_transaction_costs(trades,                        -> dict {n_trades, fixed_costs, commission, stamp_duty, total_cost, cost_pct}
   |    |                                       fixed_cost=25.0,
   |    |                                       commission_rate=0.001)
-  |    |-- analysis.py
+  |    |__ analysis.py
   |              |- sector_allocation(w, stocks)                              -> sector weight dict
   |              |- compute_portfolio_volatility(w, returns)                  -> volatility score
   |              |_ compare_portfolios(current_w,                             -> dict {current_vol, optimised_vol, current_sector, optimised_sector}
@@ -85,9 +85,23 @@
   |       |-- test_constraints.py
   |       |-- test_rebalance.py
   |       |__ test_integration.py
-  |-- results/
-  |-- main.py - Orchestrates the full pipeline: load -> optimise -> constrain -> rebalance -> analyse
-  |-- verify_multicollinearity.py                    -> standalone diagnostic script. run once before implementation to confirm k(X^T @ x) > 10^6 and ridge is required.
+  |
+  |-- results/                                                                -> stores CSV files created from export_results.py
+  |-- main.py                                                                 -> orchestrates the full pipeline: load -> optimise -> constrain -> rebalance -> analyse
+  |-- verify_multicollinearity.py                                             -> standalone diagnostic script. run once before implementation to confirm k(X^T @ x) > 10^6 and
+  |                                                                              ridge is required.
+  |-- export_results.py 
+  |              |- export_trades(trades, costs, output_dir)                  -> writes trades.csv
+  |              |- export_compliance(compliance, output_dir)                 -> writes compliance.csv
+  |              |- export_volatility(comparison, output_dir)                 -> writes volatility.csv
+  |              |- export_sector_allocation(comparison, output_dir)          -> writes sector_allocation.csv
+  |              |_ export_all(trades,                                        -> creates results/ and writes all 4 CSV files
+  |                            costs,
+  |                            compliance,
+  |                            comparison,
+  |                            output_dir)
+  |                                                      
+  |-- visualise_portfolio.py                                                  -> sector allocation chart
   |-- DESIGN.md
   |-- README.md
   |-- .gitignore
